@@ -1,4 +1,4 @@
-# 🌈 Controle de LEDs com Raspberry Pi Pico - BitDogLab
+# Controle de LEDs com Raspberry Pi Pico - BitDogLab
 
 Projeto desenvolvido para controlar LEDs (vermelho, verde e azul) utilizando um **Raspberry Pi Pico** e a função `add_alarm_in_ms()` do **Pico SDK** para temporização. O sistema é acionado por um botão e simula a sequência de LEDs acesos, com mudanças de estado a cada 3 segundos.
 
@@ -7,10 +7,10 @@ Este projeto utiliza um **Raspberry Pi Pico** com três LEDs (vermelho, verde e 
 
 ## Funcionalidades
 - **Acionamento dos LEDs**:
-  - 🔵 LED Azul → 🔴LED Vermelho → 🟢 LED Verde
+  - 🔵 LED Azul → 🔴 LED Vermelho → 🟢 LED Verde
 - **Temporização controlada**:
   - Utiliza a função `add_alarm_in_ms()` para desligar os LEDs em sequência após 3 segundos.
-    3 segundos → 🔵 Desliga LED Azul → 3 segundos → 🔴LED Vermelho → 3 segundos → 🟢 LED Verde
+  - 3 segundos → 🔵 Desliga LED Azul → 3 segundos → 🔴 Desliga LED Vermelho → 3 segundos → 🟢 Desliga LED Verde
 - **Desabilitação do botão durante o processo**:
   - O botão só pode ser acionado após todos os LEDs terem sido desligados.
 - **Debounce do botão**:
@@ -22,8 +22,8 @@ Este projeto utiliza um **Raspberry Pi Pico** com três LEDs (vermelho, verde e 
 |-------------------|-------------------------------------------------------|
 | `temp_disparo.c`  | Código principal com controle dos LEDs e do botão     |
 | `CMakeLists.txt`  | Arquivo de build do CMake                             |
-| 'diagram.json'   | Arquivo de configuração para simulação no Wokwi |
-| 'wokwi.toml'  | Configurações do simulador Wokwi              |
+| `diagram.json`   | Arquivo de configuração para simulação no Wokwi |
+| `wokwi.toml`  | Configurações do simulador Wokwi              |
 
 ## Instalação
 1. **Pré-requisitos**
@@ -43,11 +43,14 @@ Este projeto utiliza um **Raspberry Pi Pico** com três LEDs (vermelho, verde e 
      cmake ..
      make
      ```
+   - Ou através da extensão da Raspeberry Pi Pico no VS CODE
+
 
 3. **Execução**
    - **Na placa física**: 
      - Conecte o Raspberry Pi Pico ao computador em modo **BOOTSEL**.
-     - Copie o arquivo `.uf2` gerado na pasta `build` para o dispositivo identificado como `RPI-RP2`.
+     - Copie o arquivo `.uf2` gerado na pasta `build` para o dispositivo identificado como `RPI-RP2` ou através da extensão da Raspeberry Pi Pico no VS CODE
+.
    - **No simulador Wokwi**: 
      - Utilize o Wokwi para simular o comportamento do projeto.
 
@@ -70,9 +73,3 @@ Este projeto utiliza um **Raspberry Pi Pico** com três LEDs (vermelho, verde e 
 
 ✅ O sistema utiliza a função `add_alarm_in_ms()` para gerenciar o tempo entre as mudanças de estado dos LEDs.
 
-## Agradecimentos
-Agradecemos o uso da ferramenta **Pico SDK** e o simulador **Wokwi** para facilitar a implementação e testes do projeto.
-
----
-
-Este projeto foi desenvolvido para fins educacionais, com o objetivo de demonstrar o controle de LEDs com temporização utilizando o Raspberry Pi Pico.
